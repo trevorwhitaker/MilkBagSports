@@ -4,17 +4,7 @@
 
 @section('title', ' | Milk Page Sports')
 
-<div class-"row">
-	<div class="col-md-12">
-		<div class="jumbotron">
-			<h1>Milk Bag Sports</h1>
-			<p>This is a description for this milk bag sports.</p>
-		</div>
-	</div>
-</div>
-
-<h2> Most Recent Posts </h2>
-<hr>
+<h1> All Articles </h1>
 
 <div class-"row">
 	<div class="col-md-8">
