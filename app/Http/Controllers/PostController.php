@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Post;
 
+use App\Comment;
+
 class PostController extends Controller
 {
     /**
@@ -69,7 +71,10 @@ class PostController extends Controller
             Session::flash('error', 'No such post exists.');
             return redirect('/');
         }
-        return view('Pages.postPage')->withPost($post);
+
+        $comments = Comment::where('post_id', $id)->get();
+
+        return view('Pages.postPage')->withPost($post)->withComments($comments);
     }
 
     /**
@@ -104,5 +109,23 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function saveComment(Request $request)
+    {
+        $this->validate($request, array(
+           'name' => 'required|max:250',
+           'text' => 'required',
+        ));
+
+        $comment = new Comment;
+        $comment->name = $request->name;
+        $comment->text = $request->text;
+        $comment->post_id = $request->post_id;
+        $comment->reply_id = $request->reply_id;
+
+        $comment->save();
+
+        return redirect()->route('posts.show', $comment->post_id);
     }
 }

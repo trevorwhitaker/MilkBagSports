@@ -11,6 +11,8 @@
 |
 */
 
+Route::post('posts/saveComment', ['as' => 'posts.saveComment', 'uses' => 'PostController@saveComment']);
+
 Route::resource('posts', 'PostController');
 
 Route::get('/', 'PageController@getIndex');
