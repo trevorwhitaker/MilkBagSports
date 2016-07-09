@@ -10,7 +10,9 @@
 
 <p class="leaguePageText"> {{ $post->body }} </p>
 
-<hr>
+<hr style="height:10px; border:none; color:#404040; background-color:#404040;" />
+
+<h3> Comments Section </h3>
 
 @foreach($comments as $comment)
 
@@ -20,8 +22,6 @@
 	</div>
 	<hr>
 @endforeach
-
-<hr>
 
 <h2> Add a comment</h2>
 
