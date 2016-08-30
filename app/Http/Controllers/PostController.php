@@ -44,7 +44,7 @@ class PostController extends Controller
         $this->validate($request, array(
            'title' => 'required|max:250',
            'author' => 'required|max:20',
-           'body' => 'required|max:250',
+           'body' => 'required',
         ));
 
         $post = new Post;

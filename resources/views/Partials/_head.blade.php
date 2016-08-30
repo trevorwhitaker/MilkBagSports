@@ -9,3 +9,4 @@
 @yield('stylesheets')
 
 <title>Milk Bag Sports @yield('title')</title>
+
