@@ -2,13 +2,13 @@
 
 @section('content')
 
-@section('title', ' | Milk Page Sports')
+@section('title', ' | Milk bag Sports')
 
 <h2 class="leaguePageText">{{ $post->title }}</h2>
 
 <p class="leaguePageText"> {{ $post->author }} </p>
 
-<p class="leaguePageText"> {{ $post->body }} </p>
+{!! $post->body !!}
 
 <hr style="height:10px; border:none; color:#404040; background-color:#404040;" />
 
@@ -16,30 +16,27 @@
 
 @foreach($comments as $comment)
 
-	<div>
-		<p>{{ $comment->name }}: </p>
-		<p>{{ $comment->text }} </p>
+<div>
+	<p>{{ $comment->name }}: </p>
+	<p>{{ $comment->text }} </p>
+</div>
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseComment{{$comment->id}}" aria-expanded="false" aria-controls="collapseComment{{$comment->id}}">
+    Reply
+  </a>
+</p>
+<div class="collapse" id="collapseComment{{$comment->id}}">
+	<div class="card card-block">
+		@include('Partials._replyComment')
 	</div>
-	<hr>
+</div>
+<hr>
 @endforeach
 
 <h2> Add a comment</h2>
 
-<div class="row">
-	<div class="col-md-2">
-		{!! Form::open(array('route' => 'posts.saveComment')) !!}
-			{{ Form::label('name', 'Name', array('class' => 'addLeagueText')) }}
-			{{ Form::text('name', null, array('class' => 'form-control')) }}
+@include('Partials._addComment')
 
-			{{ Form::label('text', 'Comment', array('class' => 'addLeagueText')) }}
-			{{ Form::textarea('text', null, array('class' => 'form-control')) }}
-
-			{{ Form::hidden('post_id', $post->id) }}
-
-			{{ Form::submit('Submit', array('class' => 'btn btn-primary center-block')) }}
-
-		{!! Form::close() !!}
-	</div>
-</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 @endsection
