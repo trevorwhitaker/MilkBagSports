@@ -17,6 +17,7 @@
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';
+
             }
 
             .container {
@@ -30,6 +31,7 @@
                 display: inline-block;
             }
 
+
             .title {
                 font-size: 96px;
             }
@@ -37,7 +39,7 @@
     </head>
     <body>
         <div class="container">
-            <div class="content">
+            <div class="content">rty
                 <div class="title">Laravel 5</div>
             </div>
         </div>
