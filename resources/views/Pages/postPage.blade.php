@@ -4,9 +4,7 @@
 
 @section('title', ' | Post')
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-offset-1 col-md-10">
+
 
 		<h2 class="leaguePageText">{{ $post->title }}</h2>
 
@@ -14,10 +12,8 @@
 
 		{!! $post->body !!}
 
-		</div>
-	</div>
+	
 
-		</div>
 		<br>
 
 		<hr style="height:10px; border:none; color:#404040; background-color:#404040;" />
@@ -47,8 +43,6 @@
 
 		@include('Partials._addComment')
 
-	</div>
-</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 

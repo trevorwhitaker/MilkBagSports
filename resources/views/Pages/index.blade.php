@@ -6,27 +6,21 @@
 
 
 <!-- may want to make this a courasel in (instead of a jumbotron) the future: -->
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
+
 			<div class="jumbotron">
 				<h1>MilkBag Sports</h1>
 				<p>This is a description for this milk bag sports.</p>
 			</div>
-		</div>
-	</div>
-</div>
 
 
 
 
 
-<div class="container">
 
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-7">
 			<h2> Most Recent Posts </h2>
 			<hr>
 			@foreach($posts as $post)
