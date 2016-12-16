@@ -2,18 +2,6 @@
 
 <link href='https://fonts.googleapis.com/css?family=Oswald:400' rel='stylesheet' type='text/css'>
 
-<style type="text/css">
-
-.thosm {
-  font-family: Oswald, sans-serif;
-  text-align: center;
-  color: #333333;
-  font-weight: 300;
-  line-height: 1em;
-}
-
-</style>
-
 
 <div>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">

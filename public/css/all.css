@@ -1,0 +1,26 @@
+
+.col-md-10 {
+	margin-top: 50px;
+	background-color: white;
+}
+
+.body-class {
+	background-color: grey;
+}
+
+#jumbotron {
+	margin-top: 30px;
+	padding-top: 15px;
+	margin-left: 200px;
+	margin-right: 200px;
+	height: 260px;
+}
+
+.thosm {
+  font-family: Oswald, sans-serif;
+  text-align: center;
+  color: #333333;
+  font-weight: 300;
+  line-height: 1em;
+}
+

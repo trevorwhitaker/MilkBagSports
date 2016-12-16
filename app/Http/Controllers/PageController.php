@@ -15,8 +15,8 @@ use App\Post;
 class PageController extends Controller
 {
 	public function getIndex() 
-	{
-		$posts = Post::orderBy('id', 'desc')->limit(3)->get();
+	{	//need to change this to a maybe weekly limit instead
+		$posts = Post::orderBy('id', 'desc')->limit(10)->get();
 		
 		return view('Pages.index')->withPosts($posts);
 	}
