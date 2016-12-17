@@ -10,5 +10,5 @@
 
 @yield('stylesheets')
 
-<title>Milk Bag Sports @yield('title')</title>
+<title>MilkBag Sports @yield('title')</title>
 
