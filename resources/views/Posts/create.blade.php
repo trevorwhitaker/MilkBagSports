@@ -19,7 +19,7 @@
 @section('content')
 
 <div class="row">
-	<div class="col-md-8 col-md-offset-2">
+	<div class="col-md-12">
 		<h2> New Blog: </h2>
 		<hr>
 			{!! Form::open(array('route' => 'posts.store')) !!}
