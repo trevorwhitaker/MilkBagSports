@@ -41,6 +41,6 @@
 
 		</div>
 	</div>
-		
+	@include('Partials._footer')
 	</body>
 </html>

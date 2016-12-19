@@ -23,7 +23,7 @@
       <ul class="nav navbar-nav">
         <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Home</a></li>
         <li class="{{ Request::is('posts') ? "active" : "" }}"><a href="/posts">Posts</a></li>
-        <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Contact Us</a></li>
+        <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">About Us</a></li>
 
         <!-- may add navbar later -->
         <li class="dropdown">
@@ -50,7 +50,7 @@
       	<ul>
       		<a href="http://www.facebook.com" target="_blank" style=" padding-top: 9px; padding-right: 9px;" class="fa fa-facebook-square fa-2x"></a>
       		<a href="http://www.twitter.com" target="_blank" style="padding-right: 9px;" class="fa fa-twitter fa-2x"></a>
-      		<a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram fa-2x"></a>
+      		<a href="https://www.instagram.com/" target="_blank" style="padding-right: 9px;" class="fa fa-instagram fa-2x"></a>
       	</ul>
       </nav>
       </ul>
