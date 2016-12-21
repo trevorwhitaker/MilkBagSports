@@ -23,7 +23,7 @@
       <ul class="nav navbar-nav">
         <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Home</a></li>
         <li class="{{ Request::is('posts') ? "active" : "" }}"><a href="/posts">Posts</a></li>
-        <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">About Us</a></li>
+        <li class="{{ Request::is('AboutUs') ? "active" : "" }}"><a href="/AboutUs">About Us</a></li>
         
       </ul>
       <form class="navbar-form navbar-left">

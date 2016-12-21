@@ -20,4 +20,9 @@ class PageController extends Controller
 		
 		return view('Pages.index')->withPosts($posts);
 	}
+
+	public function getAboutUs() 
+	{	//need to change this to a maybe weekly limit instead
+		return view('Pages.aboutUs');
+	}
 }
