@@ -32,6 +32,7 @@
 
 .main-posts {
 	float: left;
+	margin-left:10px;
 	width: 600px;
 }
 
@@ -44,6 +45,15 @@
 .twitter_feed {
 	width: 300px;
 	float: right;
+	margin-right: 30px;
+}
+
+.logo {
+	float: left;
+	margin-left: 40px;
+	margin-top: 30px;
+	width: 260px;
+	height: 260px;
 }
 
 

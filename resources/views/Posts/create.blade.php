@@ -27,7 +27,6 @@
 				{{ Form::text('title', null, array('class' => 'form-control')) }}
 				<br>
 
-
 				{{ Form::label('author', 'Author', array('class' => 'addLeagueText')) }}
 				{{ Form::select('author', ['Scoop' => 'Scoop', 'The Vet' => 'The Vet']) }}
 				<br>

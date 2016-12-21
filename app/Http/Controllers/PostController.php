@@ -58,6 +58,7 @@ class PostController extends Controller
         $post->author = $request->author;
         $post->body = $request->body;
 
+
         $post->save();
 
         Session::flash('success', 'Blog successfully posted');

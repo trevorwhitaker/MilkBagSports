@@ -6,9 +6,12 @@
 
 
 <!-- may want to make this a courasel in (instead of a jumbotron) the future: -->
+{{ Html::image('images/main_logo.png', 'logo', array('class' => 'logo')) }}
+
+
 
 <div class="jumbotron" id="jumbotron">
-	<h1 class="thosm">MilkBag Sports</h1>
+	<h1 class="thosm">MILKBAG SPORTS</h1>
 	<p class="thosm">By Guys, for Guys, At Guys, For Men</p>
 </div>
 
