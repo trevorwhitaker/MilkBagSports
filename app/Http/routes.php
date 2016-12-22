@@ -13,7 +13,15 @@
 
 Route::post('posts/saveComment', ['as' => 'posts.saveComment', 'uses' => 'PostController@saveComment']);
 
-Route::resource('posts', 'PostController');
+Route::get('posts', ['as' => 'posts.index', 'uses' => 'PostController@index']);
+
+Route::post('posts', ['as' => 'posts.store', 'uses' => 'PostController@store']);
+
+Route::get('posts/create', ['as' => 'posts.create', 'uses' => 'PostController@create']);
+
+Route::get('posts/{posts}', ['as' => 'posts.show', 'uses' => 'PostController@show']);
+
+Route::get('posts/{posts}/edit', ['as' => 'posts.edit', 'uses' => 'PostController@edit']);
 
 Route::get('/', 'PageController@getIndex');
 
