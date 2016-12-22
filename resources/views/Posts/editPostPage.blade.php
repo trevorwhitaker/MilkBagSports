@@ -20,19 +20,24 @@
 
 <div class="row">
 	<div class="col-md-12">
-		<h2> New Blog: </h2>
+		<h2> Edit Blog: </h2>
+
+		{!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE']) !!}
+		{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+		{!! Form::close() !!}
+
 		<hr>
-			{!! Form::open(array('route' => 'posts.store')) !!}
+			{!! Form::open(array('method' => 'PUT', 'route' => ['posts.update', $post->id])) !!}
 				{{ Form::label('title', 'Title') }}
-				{{ Form::text('title', null, array('class' => 'form-control')) }}
+				{{ Form::text('title', $post->title, array('class' => 'form-control')) }}
 				<br>
 
 				{{ Form::label('author', 'Author') }}
-				{{ Form::select('author', ['Scoop' => 'Scoop', 'The Vet' => 'The Vet']) }}
+				{{ Form::select('author', ['Scoop' => 'Scoop', 'The Vet' => 'The Vet'], $post->author) }}
 				<br>
 
 				{{ Form::label('body', 'Body') }}
-				{{ Form::textarea('body', null, array('class' => 'form-control')) }}
+				{{ Form::textarea('body', $post->body, array('class' => 'form-control')) }}
 
 				{{ Form::submit('Submit', array('class' => 'btn btn-primary center-block')) }}
 

@@ -100,7 +100,14 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        if ($post == null)
+        {
+            Session::flash('error', 'No such post exists.');
+            return redirect('/');
+        }
+
+        return view('Posts.editPostPage')->withPost($post);
     }
 
     /**
@@ -112,7 +119,20 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+
+        if ($post == null)
+        {
+            Session::flash('error', 'No such post exists.');
+            return redirect('/');
+        }
+
+        $post->fill($request->all());
+
+        $post->save();
+
+        return redirect()->route('posts.show', $id);
+
     }
 
     /**
@@ -123,7 +143,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Post::destroy($id);
+
+        return redirect('/'); 
     }
 
     public function saveComment(Request $request)
