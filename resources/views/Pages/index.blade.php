@@ -2,7 +2,7 @@
 
 @section('content')
 
-@section('title', ' | Milk Page Sports')
+@section('title', ' | Home')
 
 
 <!-- may want to make this a courasel in (instead of a jumbotron) the future: -->

@@ -1,11 +1,30 @@
+body, html{
+	height:100% ;
+}
+
 .col-md-10 {
 	margin-top: 50px;
 	background-color: white;
+	height:100%;
+	display:table-cell;
+
+	padding-top:50px;
+	float:none !important;
+	
 }
 
 
+.row {
+	height:100%;
+	/*min-height:100%;
+	display:table-row;
+	*/
+	
+}
+
 .body-class {
 	background-color: grey;
+	height: 100%;
 }
 
 #jumbotron {
@@ -54,3 +73,11 @@
 	width: 260px;
 	height: 260px;
 }
+
+
+.container{
+	min-height:100%;
+	display:table;
+
+}
+
