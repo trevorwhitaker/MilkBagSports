@@ -38,9 +38,20 @@
 
 				{{ Form::label('body', 'Body') }}
 				{{ Form::textarea('body', $post->body, array('class' => 'form-control')) }}
+				<br>
 
+				{!! Form::label('tags[]', 'Tags', ['class' => 'col-lg-2 control-label'] )  !!}
+                {!! Form::select('tags[]',
+                [
+                'Baseball' => 'Baseball',
+                'Hockey' => 'Hockey',
+                'Tennis' => 'Tennis',
+                'Basketball' => 'Basketball',
+                'Other' => 'Other'
+                ],
+                $selected = null, ['class' => 'form-control', 'multiple' => 'multiple']) !!}
+                
 				{{ Form::submit('Submit', array('class' => 'btn btn-primary center-block')) }}
-
 			{!! Form::close() !!}
 	</div>
 </div>

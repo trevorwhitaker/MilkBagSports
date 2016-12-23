@@ -49,6 +49,7 @@ class PostController extends Controller
            'title' => 'required|max:250',
            'author' => 'required|max:20',
            'body' => 'required',
+           'tags' => 'array'
         ));
 
         //store in database
@@ -57,16 +58,11 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->author = $request->author;
         $post->body = $request->body;
-
+        $post->categories = implode(",", array_values($request->tags));
 
         $post->save();
 
         Session::flash('success', 'Blog successfully posted');
-
-        //redirect to another page
-
-
-
 
         //return redirect()->route('posts.show', $post->id);
         return redirect()->action('PageController@getIndex');
@@ -86,7 +82,7 @@ class PostController extends Controller
             Session::flash('error', 'No such post exists.');
             return redirect('/');
         }
-
+        $post->tags = explode(",", $post->categories);
         $comments = Comment::where('post_id', $id)->get();
 
         return view('Pages.postPage')->withPost($post)->withComments($comments);
@@ -128,7 +124,10 @@ class PostController extends Controller
         }
 
         $post->fill($request->all());
-
+        if (isset($request['tags']))
+        {
+            $post->categories = implode(",", array_values($request->tags));
+        }
         $post->save();
 
         return redirect()->route('posts.show', $id);

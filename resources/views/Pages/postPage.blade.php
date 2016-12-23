@@ -11,9 +11,7 @@
 		<p class="leaguePageText"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>
 
 		{!! $post->body !!}
-
-	
-
+		<p> Tags: {{ implode(", ", $post->tags) }}</p>
 		<br>
 
 		<hr style="height:10px; border:none; color:#404040; background-color:#404040;" />
