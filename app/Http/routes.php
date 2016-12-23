@@ -13,7 +13,19 @@
 
 Route::post('posts/saveComment', ['as' => 'posts.saveComment', 'uses' => 'PostController@saveComment']);
 
-Route::resource('posts', 'PostController');
+Route::get('posts', ['as' => 'posts.index', 'uses' => 'PostController@index']);
+
+Route::post('posts', ['as' => 'posts.store', 'uses' => 'PostController@store']);
+
+Route::get('posts/create', ['as' => 'posts.create', 'uses' => 'PostController@create'])->middleware('auth.basic');
+
+Route::get('posts/{posts}', ['as' => 'posts.show', 'uses' => 'PostController@show']);
+
+Route::get('posts/{posts}/edit', ['as' => 'posts.edit', 'uses' => 'PostController@edit'])->middleware('auth.basic');
+
+Route::delete('posts/{posts}', ['as' => 'posts.destroy', 'uses' => 'PostController@destroy'])->middleware('auth.basic');
+
+Route::put('posts/{posts}', ['as' => 'posts.update', 'uses' => 'PostController@update'])->middleware('auth.basic');
 
 Route::get('/', 'PageController@getIndex');
 
