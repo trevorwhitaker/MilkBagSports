@@ -7,7 +7,7 @@
 	<body class="body-class">
 	@include('Partials._nav')
 
-	<div class="container">
+	<div class="container main">
 		<div class="row">
 			<div class="col-md-1">
 			</div>
