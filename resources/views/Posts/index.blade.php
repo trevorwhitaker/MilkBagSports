@@ -4,16 +4,20 @@
 
 @section('title', ' | Milk Page Sports')
 
-<h1> All Articles </h1>
+<h2 class="thosm_no_align" style="margin-left:20px;"> All Articles </h2>
 
-		@foreach($posts as $post)
+	@foreach($posts as $post)
 
-			<div>
-				<hr>
-				<h3>{{ $post->title }}</h3>
-				<p class="leaguePageText"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>
-				<a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">Read More</a>
+	<div class="main-posts">
+		<div class="indiv_post">
+			<img class="text-wrap" src="{{ $post->post_image}}">
+			<div class="post_description">
+				<h3 class="thosm_no_align" id="h3">{{ $post->title }}</h3>
+				<p class="thosm_no_align"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>
 			</div>
-		@endforeach
+			<a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">Read More</a>
+		</div>
+	</div>
+	@endforeach
 
 @endsection

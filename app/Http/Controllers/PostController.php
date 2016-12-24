@@ -63,7 +63,7 @@ class PostController extends Controller
         //dd($request->post_image);
         $filename = time() . '.' . $post_image->getClientOriginalExtension();
        // dd($filename);
-        Image::make($post_image)->resize(200, 120)->save(public_path('uploads/'. $filename));
+        Image::make($post_image)->resize(300, 180)->save(public_path('uploads/'. $filename));
 
         //dd(public_path('uploads/'. $filename));
         //store in database
