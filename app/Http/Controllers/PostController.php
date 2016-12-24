@@ -12,6 +12,8 @@ use App\Comment;
 
 use Session;
 
+use Image;
+
 class PostController extends Controller
 {
     /**
@@ -24,6 +26,8 @@ class PostController extends Controller
         $posts = Post::all();
         return view('Posts.index')->withPosts($posts);
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -49,15 +53,26 @@ class PostController extends Controller
            'title' => 'required|max:250',
            'author' => 'required|max:20',
            'body' => 'required',
+           'post_image' => 'required',
            'tags' => 'array'
         ));
 
+        //image processing
+       // dd('1');
+        $post_image = $request->file('post_image');
+        //dd($request->post_image);
+        $filename = time() . '.' . $post_image->getClientOriginalExtension();
+       // dd($filename);
+        Image::make($post_image)->resize(200, 120)->save(public_path('uploads/'. $filename));
+
+        //dd(public_path('uploads/'. $filename));
         //store in database
 
         $post = new Post;
         $post->title = $request->title;
         $post->author = $request->author;
         $post->body = $request->body;
+        $post->post_image = '/uploads/'. $filename;
         $post->categories = implode(",", array_values($request->tags));
 
         $post->save();

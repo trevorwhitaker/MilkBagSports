@@ -16,6 +16,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
+            $table->string('post_image');
             $table->string('path2audio')->nullable();
             $table->string('author', 20);
             $table->timestamps();
