@@ -27,6 +27,13 @@
   line-height: 1em;
 }
 
+.thosm_no_align {
+  font-family: Oswald, sans-serif;
+  color: #333333;
+  font-weight: 300;
+  line-height: 1em;
+}
+
 #footer {
   height: 80px;
   background-color: #3F3D3D;
@@ -35,19 +42,18 @@
 .main-posts {
 	float: left;
 	margin-left:10px;
-	width: 600px;
+	width: 620px;
 }
 
 .indiv_post {
 	float:left;
-	height: 150px;
-	width: 600px;
+	height: 202px;
+	width: 620px;
 }
 
 .twitter_feed {
 	width: 300px;
 	float: right;
-	margin-right: 30px;
 }
 
 .logo {
@@ -62,4 +68,19 @@
 	text-align: center;
 	padding-top: 30px;
 	color: white
+}
+
+.post_description {
+	padding-right: 0px;
+	margin-top: 10px;
+}
+
+#h3 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.text-wrap{
+	float: left;
+    margin: 10px;
 }

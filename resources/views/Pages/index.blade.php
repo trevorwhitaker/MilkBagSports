@@ -18,7 +18,7 @@
 
 
 
-<h2> Most Recent Posts </h2>
+<h2 class="thosm_no_align" style="margin-left:20px;"> Most Recent Posts </h2>
 <hr>
 
 	<div class="twitter_feed">
@@ -31,11 +31,14 @@
 
 	<div class="main-posts">
 		<div class="indiv_post">
-			<h3>{{ $post->title }}</h3>
-			<img src="{{ $post->post_image}}">
-			<p class="leaguePageText"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>
+			<img class="text-wrap" src="{{ $post->post_image}}">
+			<div class="post_description">
+				<h3 class="thosm_no_align" id="h3">{{ $post->title }}</h3>
+				<p class="thosm_no_align"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>
+			</div>
 			<a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">Read More</a>
 		</div>
+		<hr>
 	</div>
 @endforeach
 	
