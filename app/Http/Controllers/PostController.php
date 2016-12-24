@@ -179,4 +179,10 @@ class PostController extends Controller
 
         return redirect()->route('posts.show', $comment->post_id);
     }
+
+    public function getPostByTag($tag)
+    {
+        $posts = Post::where('categories', 'LIKE', '%' . $tag . '%')->orderBy('created_at', 'DESC')->get();
+        return view('Posts.index')->withPosts($posts)->withTag($tag);
+    }
 }

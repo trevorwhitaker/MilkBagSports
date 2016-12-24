@@ -22,7 +22,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Home</a></li>
-        <li class="{{ Request::is('posts') ? "active" : "" }}"><a href="/posts">Posts</a></li>
+        <li class="dropdown {{ Route::is('posts.*') ? "active" : "" }}">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/posts">All</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/posts/tags/Baseball">Baseball</a></li>
+            <li><a href="/posts/tags/Basketball">Basketball</a></li>
+            <li><a href="/posts/tags/Hockey">Hockey</a></li>
+            <li><a href="/posts/tags/Tennis">Tennis</a></li>
+            <li><a href="/posts/tags/Other">Other</a></li>
+          </ul>
+        </li>
         <li class="{{ Request::is('AboutUs') ? "active" : "" }}"><a href="/AboutUs">About Us</a></li>
         
       </ul>
