@@ -21,6 +21,8 @@ Route::get('posts/create', ['as' => 'posts.create', 'uses' => 'PostController@cr
 
 Route::get('posts/{posts}', ['as' => 'posts.show', 'uses' => 'PostController@show']);
 
+Route::get('posts/{posts}/edit', ['as' => 'posts.edit', 'uses' => 'PostController@edit'])->middleware('auth.basic');
+
 Route::get('posts/tags/{tag}', ['as' => 'posts.getPostByTag', 'uses' => 'PostController@getPostByTag']);
 
 Route::delete('posts/{posts}', ['as' => 'posts.destroy', 'uses' => 'PostController@destroy'])->middleware('auth.basic');

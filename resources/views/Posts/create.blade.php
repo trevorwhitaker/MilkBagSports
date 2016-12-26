@@ -8,8 +8,11 @@
 
 	<script>
 		tinymce.init({
-			selector: 'textarea',
-			plugins: 'link code,media',
+			
+			selector: "textarea",      
+    		plugins: "link code, media",
+    		valid_elements: "*[*]",
+    		extended_valid_elements: "embed[width|height|name|flashvars|src|bgcolor|align|play|loop|quality|allowscriptaccess|type|pluginspage],object[id|style|width|height|classid|codebase|*],param[name|value],embed[id|style|width|height|type|src|*]",
 			menubar: true
 		});
 	</script>
