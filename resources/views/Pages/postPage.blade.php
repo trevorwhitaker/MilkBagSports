@@ -6,12 +6,14 @@
 
 
 
-		<h2 class="leaguePageText">{{ $post->title }}</h2>
+		<h2 class="thosm_no_align">{{ $post->title }}</h2>
 
-		<p class="leaguePageText"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>
+		<p class="thosm_no_align"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>
+
+		<hr>
 
 		{!! $post->body !!}
-		<p> Tags: {{ implode(", ", $post->tags) }}</p>
+		<p class=thosm_no_align> Tags: {{ implode(", ", $post->tags) }}</p>
 		<br>
 
 		<hr style="height:10px; border:none; color:#404040; background-color:#404040;" />

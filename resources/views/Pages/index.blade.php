@@ -12,7 +12,7 @@
 
 <div class="jumbotron" id="jumbotron">
 	<h1 class="thosm">MILKBAG SPORTS</h1>
-	<p class="thosm">By Guys, for Guys, At Guys, For Men</p>
+	<p class="thosm"></p>
 </div>
 
 
@@ -34,7 +34,7 @@
 			<img class="text-wrap" src="{{ $post->post_image}}">
 			<div class="post_description">
 				<h3 class="thosm_no_align" id="h3">{{ $post->title }}</h3>
-				<p class="thosm_no_align"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>
+				<p class="thosm_no_align"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->created_at)) }}</strong></p>
 			</div>
 			<a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">Read More</a>
 		</div>

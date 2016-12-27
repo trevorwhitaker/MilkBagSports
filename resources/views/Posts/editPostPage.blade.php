@@ -45,7 +45,8 @@
                 [
                 'Baseball' => 'Baseball',
                 'Hockey' => 'Hockey',
-                'Tennis' => 'Tennis',
+                'Viral' => 'Viral',
+                'Football' => 'Football',
                 'Basketball' => 'Basketball',
                 'Other' => 'Other'
                 ],

@@ -30,25 +30,28 @@
             <li><a href="/posts/tags/Baseball">Baseball</a></li>
             <li><a href="/posts/tags/Basketball">Basketball</a></li>
             <li><a href="/posts/tags/Hockey">Hockey</a></li>
-            <li><a href="/posts/tags/Tennis">Tennis</a></li>
+            <li><a href="/posts/tags/Football">Football</a></li>
+            <li><a href="/posts/tags/Viral">Viral</a></li>
             <li><a href="/posts/tags/Other">Other</a></li>
           </ul>
         </li>
         <li class="{{ Request::is('AboutUs') ? "active" : "" }}"><a href="/AboutUs">About Us</a></li>
         
       </ul>
+      <!--
       <form class="navbar-form navbar-left">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
+      -->
       <ul class="nav navbar-nav navbar-right">
         <nav class="social__nav">
       	<ul>
-      		<a href="http://www.facebook.com" target="_blank" style=" padding-top: 9px; padding-right: 9px;" class="fa fa-facebook-square fa-2x"></a>
-      		<a href="http://www.twitter.com" target="_blank" style="padding-right: 9px;" class="fa fa-twitter fa-2x"></a>
-      		<a href="https://www.instagram.com/" target="_blank" style="padding-right: 9px;" class="fa fa-instagram fa-2x"></a>
+      		<a href="https://www.facebook.com/milkbagsports/" target="_blank" style=" padding-top: 9px; padding-right: 9px;" class="fa fa-facebook-square fa-2x"></a>
+      		<a href="https://twitter.com/milkbag_sports/" target="_blank" style="padding-right: 9px;" class="fa fa-twitter fa-2x"></a>
+      		<a href="https://www.instagram.com/milkbagsports/" target="_blank" style="padding-right: 9px;" class="fa fa-instagram fa-2x"></a>
       	</ul>
       </nav>
       </ul>
