@@ -25,6 +25,8 @@ Route::get('posts/{posts}/edit', ['as' => 'posts.edit', 'uses' => 'PostControlle
 
 Route::get('posts/tags/{tag}', ['as' => 'posts.getPostByTag', 'uses' => 'PostController@getPostByTag']);
 
+Route::get('posts/author/{author}', ['as' => 'posts.getPostByAuthor', 'uses' => 'PostController@getPostByAuthor']);
+
 Route::delete('posts/{posts}', ['as' => 'posts.destroy', 'uses' => 'PostController@destroy'])->middleware('auth.basic');
 
 Route::put('posts/{posts}', ['as' => 'posts.update', 'uses' => 'PostController@update'])->middleware('auth.basic');

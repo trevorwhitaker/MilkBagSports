@@ -27,7 +27,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'DESC')->get();
         return view('Posts.index')->withPosts($posts);
     }
 
@@ -195,5 +195,12 @@ class PostController extends Controller
     {
         $posts = Post::where('categories', 'LIKE', '%' . $tag . '%')->orderBy('created_at', 'DESC')->get();
         return view('Posts.index')->withPosts($posts)->withTag($tag);
+    }
+
+    public function getPostByAuthor($author)
+    {
+        $author = str_replace("_", " ", $author);
+        $posts = Post::where('author', '=', $author)->orderBy('created_at', 'DESC')->get();
+        return view('Posts.index')->withPosts($posts)->withAuthor(' written by '. $author);
     }
 }
