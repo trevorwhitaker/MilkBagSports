@@ -34,8 +34,8 @@
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 			<!-- Need to put this in a footer file -->
-			<!-- <p class="text-center">Copyright MilkBag Sports - All rights Reserved</p>
-			@yield('scripts') -->
+			<!-- <p class="text-center">Copyright MilkBag Sports - All rights Reserved</p> -->
+			@yield('scripts')
 		</div>
 	</div>
 	@include('Partials._footer')

@@ -48,7 +48,6 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //validate the data
-
         $this->validate($request, array(
            'title' => 'required|max:250',
            'author' => 'required|max:20',
@@ -117,7 +116,7 @@ class PostController extends Controller
             Session::flash('error', 'No such post exists.');
             return redirect('/');
         }
-
+        $post->tags = explode(",", $post->categories);
         return view('Posts.editPostPage')->withPost($post);
     }
 
