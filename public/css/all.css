@@ -80,6 +80,11 @@
 	margin-bottom: 5px;
 }
 
+.text-wrap{
+	float: left;
+    margin: 10px;
+}
+
 .dropdown-menu .sub-menu {
     left: 100%;
     position: absolute;
