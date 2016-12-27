@@ -14,6 +14,10 @@ use Session;
 
 use Image;
 
+use App\Events\ViewPostEvent;
+
+use Event;
+
 class PostController extends Controller
 {
     /**
@@ -88,7 +92,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $post = Post::find($id);
         if ($post == null)
@@ -97,6 +101,14 @@ class PostController extends Controller
             return redirect('/');
         }
         $post->tags = explode(",", $post->categories);
+
+        $viewed = Session::get('viewed', []);
+        if (!in_array($id, $viewed))
+        {
+            Event::fire(new ViewPostEvent($post));
+            $request->session()->push('viewed', $id);
+        }
+
         $comments = Comment::where('post_id', $id)->get();
 
         return view('Pages.postPage')->withPost($post)->withComments($comments);
