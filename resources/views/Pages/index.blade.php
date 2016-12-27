@@ -23,7 +23,11 @@
 
 	<div class="twitter_feed">
 
-		<a class="twitter-timeline" href="https://twitter.com/milkbag_sports">Tweets by milkbag_sports</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<a class="twitter-follow-button"
+ 	 href="https://twitter.com/milkbag_sports">
+	Follow @milkbag_sports</a>
+
+		<a class="twitter-timeline" data-tweet-limit=7 href="https://twitter.com/milkbag_sports">Tweets by milkbag_sports</a> <script async src="//platform.twitter.com/widgets.js" data-tweet-limit=5 charset="utf-8"></script>
 
 	</div>
 @foreach($posts as $post)
