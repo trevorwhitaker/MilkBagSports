@@ -67,8 +67,7 @@ class PostController extends Controller
 
         Image::make($post_image)->resize(300, 180)->save(public_path('uploads/'. $filename));
 
-    
-
+        // create new post object
         $post = new Post;
         $post->title = $request->title;
         $post->author = $request->author;
