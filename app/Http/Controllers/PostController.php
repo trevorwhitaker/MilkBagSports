@@ -61,15 +61,13 @@ class PostController extends Controller
         ));
 
         //image processing
-       // dd('1');
+
         $post_image = $request->file('post_image');
-        //dd($request->post_image);
         $filename = time() . '.' . $post_image->getClientOriginalExtension();
-       // dd($filename);
+
         Image::make($post_image)->resize(300, 180)->save(public_path('uploads/'. $filename));
 
-        //dd(public_path('uploads/'. $filename));
-        //store in database
+    
 
         $post = new Post;
         $post->title = $request->title;

@@ -5,17 +5,68 @@
 @section('title', ' | Home')
 
 
-<!-- may want to make this a courasel in (instead of a jumbotron) the future: -->
 {{ Html::image('images/main_logo.png', 'logo', array('class' => 'logo')) }}
 
+<div class="bs-example">
+    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ol id="carousel-dots" class="carousel-indicators">
+            <li class="slide-one active"></li>
+            <li class="slide-two"></li>
+            <li class="slide-three"></li>
+        </ol>   
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+
+        	<?php $cnt = 0; ?>
+
+		    @foreach($top_posts as $post)
+		    <?php
+		    if ($cnt == 0){
+		    	$cnt++; 
+		    	?>
+
+            <div class="active item">
+            <a href="{{ route('posts.show', $post->id) }}">
+                <img src="{{ $post->post_image}}" width="500" height="300" alt="First Slide">
+            </a>
+                <div class="c_caption">
+                	<a href="{{ route('posts.show', $post->id) }}">
+                		<h5 class="thosm_no_align" style="color: white">{{ $post->title }}</h5>
+              	 	</a>
+                </div>
+            </div>
+
+            <?php 
+		 		} else {
+		     ?>
+
+            <div class="item">
+            <a href="{{ route('posts.show', $post->id) }}">
+                <img src="{{ $post->post_image}}" width="500" height="300" alt="Second Slide">
+            </a>
+                <div class="c_caption">
+                 	<a href="{{ route('posts.show', $post->id) }}">
+                		<h5 class="thosm_no_align" style="color: white">{{ $post->title }}</h5>
+               		</a>
+                </div>
+            </div>
+
+            <?php } ?>
 
 
-<div class="jumbotron" id="jumbotron">
-	<h1 class="thosm">MILKBAG SPORTS</h1>
-	<p class="thosm"></p>
+      		@endforeach
+
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control left">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
 </div>
-
-
 
 
 <h2 class="thosm_no_align" style="margin-left:20px;"> Most Recent Posts </h2>
