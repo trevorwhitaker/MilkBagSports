@@ -16,7 +16,7 @@
 			<div class="col-md-10">
 			
 
-			@include('partials._messages')
+			@include('Partials._messages')
 
 
 			@yield('content')
