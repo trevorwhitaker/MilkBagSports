@@ -28,7 +28,7 @@
 
             <div class="active item">
             <a href="{{ route('posts.show', $post->id) }}">
-                <img src="{{ $post->post_image}}" width="500" height="300" alt="First Slide">
+                <img src="{{ $post->post_image}}" width="100%" height="100%" alt="First Slide">
             </a>
                 <div class="c_caption">
                 	<a href="{{ route('posts.show', $post->id) }}">
@@ -43,7 +43,7 @@
 
             <div class="item">
             <a href="{{ route('posts.show', $post->id) }}">
-                <img src="{{ $post->post_image}}" width="500" height="300" alt="Second Slide">
+                <img src="{{ $post->post_image}}" width="100%" height="100%" alt="Second Slide">
             </a>
                 <div class="c_caption">
                  	<a href="{{ route('posts.show', $post->id) }}">
@@ -72,19 +72,10 @@
 <h2 class="thosm_no_align" style="margin-left:20px;"> Most Recent Posts </h2>
 <hr>
 
-	<div class="twitter_feed">
-
-	<a class="twitter-follow-button"
- 	 href="https://twitter.com/milkbag_sports">
-	Follow @milkbag_sports</a>
-
-		<a class="twitter-timeline" data-tweet-limit=7 href="https://twitter.com/milkbag_sports">Tweets by milkbag_sports</a> <script async src="//platform.twitter.com/widgets.js" data-tweet-limit=5 charset="utf-8"></script>
-
-	</div>
+<div class="main-posts">
 @foreach($posts as $post)
 
 
-	<div class="main-posts">
 		<div class="indiv_post">
 			<img class="text-wrap" src="{{ $post->post_image}}">
 			<div class="post_description">
@@ -94,9 +85,16 @@
 			<a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">Read More</a>
 		</div>
 		<hr>
-	</div>
 @endforeach
-	
+</div>
+<div class="twitter_feed">
 
+	<a class="twitter-follow-button"
+ 	 href="https://twitter.com/milkbag_sports">
+	Follow @milkbag_sports</a>
+
+		<a class="twitter-timeline" data-tweet-limit=7 href="https://twitter.com/milkbag_sports">Tweets by milkbag_sports</a> <script async src="//platform.twitter.com/widgets.js" data-tweet-limit=5 charset="utf-8"></script>
+
+	</div>
 
 @endsection
