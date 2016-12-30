@@ -126,7 +126,10 @@ class PostController extends Controller
             return redirect('/');
         }
         $post->tags = explode(",", $post->categories);
-        return view('Posts.editPostPage')->withPost($post);
+
+        $comments = Comment::where('post_id', $id)->get();
+
+        return view('Posts.editPostPage')->withPost($post)->withComments($comments);
     }
 
     /**
@@ -186,6 +189,13 @@ class PostController extends Controller
         $comment->save();
 
         return redirect()->route('posts.show', $comment->post_id);
+    }
+
+    public function deleteComment($id)
+    {
+        $comment = Comment::find($id);
+        $comment->delete();
+        return redirect()->route('posts.edit', $comment->post_id);
     }
 
     public function getPostByTag($tag)
