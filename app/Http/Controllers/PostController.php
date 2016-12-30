@@ -105,7 +105,7 @@ class PostController extends Controller
         $post->tags = explode(",", $post->categories);
 
         $viewed = Session::get('viewed', []);
-        if (!in_array($id, $viewed))
+        if (!in_array($post->id, $viewed))
         {
             Event::fire(new ViewPostEvent($post));
             $request->session()->push('viewed', $post->id);
