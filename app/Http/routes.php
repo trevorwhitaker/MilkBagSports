@@ -29,7 +29,7 @@ Route::get('posts/author/{author}', ['as' => 'posts.getPostByAuthor', 'uses' => 
 
 Route::delete('posts/{posts}', ['as' => 'posts.destroy', 'uses' => 'PostController@destroy'])->middleware('auth.basic');
 
-Route::delete('posts/deleteComment/{posts}', ['as' => 'posts.deleteComment', 'uses' => 'PostController@deleteComment'])->middleware('auth.basic');
+Route::delete('posts/deleteComment/{posts}/{title}', ['as' => 'posts.deleteComment', 'uses' => 'PostController@deleteComment'])->middleware('auth.basic');
 
 Route::put('posts/{posts}', ['as' => 'posts.update', 'uses' => 'PostController@update'])->middleware('auth.basic');
 

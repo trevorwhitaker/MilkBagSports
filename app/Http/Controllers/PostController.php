@@ -111,7 +111,7 @@ class PostController extends Controller
             $request->session()->push('viewed', $post->id);
         }
 
-        $comments = Comment::where('post_id', $id)->get();
+        $comments = Comment::where('post_id', $post->id)->get();
 
         return view('Pages.postPage')->withPost($post)->withComments($comments);
     }
@@ -127,7 +127,7 @@ class PostController extends Controller
         $post = $this->getPostByTitle($id);
         $post->tags = explode(",", $post->categories);
 
-        $comments = Comment::where('post_id', $id)->get();
+        $comments = Comment::where('post_id', $post->id)->get();
 
         return view('Posts.editPostPage')->withPost($post)->withComments($comments);
     }
@@ -182,14 +182,19 @@ class PostController extends Controller
 
         $comment->save();
 
-        return redirect()->route('posts.show', $comment->post_id);
+        return redirect()->route('posts.show', $request->post_title);
     }
 
-    public function deleteComment($id)
+    public function deleteComment($id, $title)
     {
         $comment = Comment::find($id);
+        if ($comment == null)
+        {
+            Session::flash('error', 'Comment not found.');
+            return redirect('/');
+        }
         $comment->delete();
-        return redirect()->route('posts.edit', $comment->post_id);
+        return redirect()->route('posts.edit', $title);
     }
 
     public function getPostByTag($tag)

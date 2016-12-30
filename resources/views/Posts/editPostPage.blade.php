@@ -83,7 +83,7 @@
 	<p>{{ $comment->name }}: </p>
 	<p>{{ $comment->text }} </p>
 </div>
-		{!! Form::open(['route' => ['posts.deleteComment', $comment->id], 'method' => 'DELETE']) !!}
+		{!! Form::open(['route' => ['posts.deleteComment', $comment->id, str_replace(" ", "-", $post->title)], 'method' => 'DELETE']) !!}
 		{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
 		{!! Form::close() !!}
 <div class="collapse" id="collapseComment{{$comment->id}}">
