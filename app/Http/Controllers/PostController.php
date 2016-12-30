@@ -31,7 +31,17 @@ class PostController extends Controller
         return view('Posts.index')->withPosts($posts);
     }
 
+    private function getPostByTitle($title)
+    {
+        $posts = Post::where('title', '=', str_replace("-", " ", $title))->get();
 
+        if (count($posts) != 1)
+        {
+            Session::flash('error', 'No such post exists.');
+            return redirect('/');
+        }
+        return $posts[0];
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -53,7 +63,7 @@ class PostController extends Controller
     {
         //validate the data
         $this->validate($request, array(
-           'title' => 'required|max:250',
+           'title' => 'required|unique:posts|max:250',
            'author' => 'required|max:20',
            'body' => 'required',
            'post_image' => 'required',
@@ -91,19 +101,14 @@ class PostController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $post = Post::find($id);
-        if ($post == null)
-        {
-            Session::flash('error', 'No such post exists.');
-            return redirect('/');
-        }
+        $post = $this->getPostByTitle($id);
         $post->tags = explode(",", $post->categories);
 
         $viewed = Session::get('viewed', []);
         if (!in_array($id, $viewed))
         {
             Event::fire(new ViewPostEvent($post));
-            $request->session()->push('viewed', $id);
+            $request->session()->push('viewed', $post->id);
         }
 
         $comments = Comment::where('post_id', $id)->get();
@@ -119,12 +124,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
-        if ($post == null)
-        {
-            Session::flash('error', 'No such post exists.');
-            return redirect('/');
-        }
+        $post = $this->getPostByTitle($id);
         $post->tags = explode(",", $post->categories);
 
         $comments = Comment::where('post_id', $id)->get();
@@ -141,13 +141,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::find($id);
-
-        if ($post == null)
-        {
-            Session::flash('error', 'No such post exists.');
-            return redirect('/');
-        }
+        $post = $this->getPostByTitle($id);
 
         $post->fill($request->all());
         if (isset($request['tags']))
