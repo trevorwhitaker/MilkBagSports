@@ -34,13 +34,6 @@ class PostController extends Controller
     private function getPostByTitle($title)
     {
         $posts = Post::where('title', '=', str_replace("_", " ", $title))->get();
-
-        if (count($posts) != 1)
-        {
-            Session::flash('error', 'No such post exists.');
-            return redirect('/');
-        }
-        return $posts[0];
     }
 
     /**
@@ -101,7 +94,13 @@ class PostController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $post = $this->getPostByTitle($id);
+        $posts = $this->getPostByTitle($id);
+        if (count($posts) != 1)
+        {
+            Session::flash('error', 'No such post exists.');
+            return redirect('/');
+        }
+        $post = $posts[0];
         $post->tags = explode(",", $post->categories);
 
         $viewed = Session::get('viewed', []);
@@ -124,7 +123,13 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = $this->getPostByTitle($id);
+        $posts = $this->getPostByTitle($id);
+        if (count($posts) != 1)
+        {
+            Session::flash('error', 'No such post exists.');
+            return redirect('/');
+        }
+        $post = $posts[0];
         $post->tags = explode(",", $post->categories);
 
         $comments = Comment::where('post_id', $post->id)->get();
@@ -141,7 +146,13 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = $this->getPostByTitle($id);
+        $posts = $this->getPostByTitle($id);
+        if (count($posts) != 1)
+        {
+            Session::flash('error', 'No such post exists.');
+            return redirect('/');
+        }
+        $post = $posts[0];
 
         $post->fill($request->all());
         if (isset($request['tags']))
