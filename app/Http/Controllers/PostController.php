@@ -33,7 +33,7 @@ class PostController extends Controller
 
     private function getPostByTitle($title)
     {
-        $posts = Post::where('title', '=', str_replace("_", " ", $title))->get();
+        return Post::where('title', '=', str_replace("_", " ", $title))->get();
     }
 
     /**
