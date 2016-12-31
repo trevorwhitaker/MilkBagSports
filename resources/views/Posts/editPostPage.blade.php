@@ -30,7 +30,7 @@
 		{!! Form::close() !!}
 
 		<hr>
-			{!! Form::open(array('method' => 'PUT', 'route' => ['posts.update', $post->id])) !!}
+			{!! Form::open(array('method' => 'PUT', 'route' => ['posts.update', str_replace(" ", "_", $post->title)])) !!}
 				{{ Form::label('title', 'Title') }}
 				{{ Form::text('title', $post->title, array('class' => 'form-control')) }}
 				<br>
