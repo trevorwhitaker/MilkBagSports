@@ -28,11 +28,12 @@
 
             <div class="active item">
 
-            <a href="{{ route('posts.show', str_replace(" ", "_", $post->title)) }}">
+
+            <a href="{{ route('posts.show', str_replace('#', '%23', $post->title)) }}">
                 <img src="{{ $post->post_image}}" width="100%" height="100%" alt="First Slide">
             </a>
                 <div class="c_caption">
-                	<a href="{{ route('posts.show', str_replace(" ", "_", $post->title)) }}">
+                	<a href="{{ route('posts.show', str_replace('#', '%23', $post->title)) }}">
                 		<h5 class="thosm_no_align" style="color: white">{{ $post->title }}</h5>
               	 	</a>
                 </div>
@@ -43,11 +44,11 @@
 		     ?>
 
             <div class="item">
-            <a href="{{ route('posts.show', str_replace(" ", "_", $post->title)) }}">
+            <a href="{{ route('posts.show', str_replace('#', '%23', $post->title)) }}">
                 <img src="{{ $post->post_image}}" width="100%" height="100%" alt="Second Slide">
             </a>
                 <div class="c_caption">
-                 	<a href="{{ route('posts.show', str_replace(" ", "_", $post->title)) }}">
+                 	<a href="{{ route('posts.show', str_replace('#', '%23', $post->title)) }}">
                 		<h5 class="thosm_no_align" style="color: white">{{ $post->title }}</h5>
                		</a>
                 </div>
@@ -83,7 +84,7 @@
 				<h3 class="thosm_no_align" id="h3">{{ $post->title }}</h3>
 				<p class="thosm_no_align"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->created_at)) }}</strong></p>
 			</div>
-			<a href="{{ route('posts.show', str_replace(" ", "_", $post->title)) }}" class="btn btn-primary">Read More</a>
+			<a href="{{ route('posts.show', str_replace('#', '%23', $post->title)) }}" class="btn btn-primary">Read More</a>
 		</div>
 		<hr>
 @endforeach

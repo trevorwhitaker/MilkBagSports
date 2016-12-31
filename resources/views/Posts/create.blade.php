@@ -27,6 +27,7 @@
 		<h2> New Blog: </h2>
 		<hr>
 		{!! Form::open(array('route' => 'posts.store', 'files' => true)) !!}
+		<p style="color: red; font-size: 45"> DO NOT USE " / " IN THE TITLE </p>
 		{{ Form::label('title', 'Title') }}
 		{{ Form::text('title', null, array('class' => 'form-control')) }}
 		<br>
