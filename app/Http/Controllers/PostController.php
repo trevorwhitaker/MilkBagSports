@@ -33,7 +33,12 @@ class PostController extends Controller
 
     private function getPostByTitle($title)
     {
-        return Post::where('title', '=', str_replace("_", " ", $title))->get();
+        return Post::where('title', '=', $title)->get();
+    }
+
+    private function escapePostTitle($title)
+    {
+        return str_replace('#', '%23', $title);
     }
 
     /**
@@ -161,7 +166,7 @@ class PostController extends Controller
         }
         $post->save();
 
-        return redirect()->route('posts.show', $post->title);
+        return redirect()->route('posts.show', $this->escapePostTitle($id));
 
     }
 
@@ -193,7 +198,7 @@ class PostController extends Controller
 
         $comment->save();
 
-        return redirect()->route('posts.show', $request->post_title);
+        return redirect()->route('posts.show', $this->escapePostTitle($request->post_title));
     }
 
     public function deleteComment($id, $title)
@@ -205,7 +210,7 @@ class PostController extends Controller
             return redirect('/');
         }
         $comment->delete();
-        return redirect()->route('posts.edit', $title);
+        return redirect()->route('posts.edit', $this->escapePostTitle($title));
     }
 
     public function getPostByTag($tag)

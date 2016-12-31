@@ -30,7 +30,8 @@
 		{!! Form::close() !!}
 
 		<hr>
-			{!! Form::open(array('method' => 'PUT', 'route' => ['posts.update', str_replace(" ", "_", $post->title)])) !!}
+			{!! Form::open(array('method' => 'PUT', 'route' => ['posts.update', str_replace('#', '%23', $post->title)])) !!}
+			<p style="color: red; font-size: 45"> DO NOT USE " / " IN THE TITLE </p>
 				{{ Form::label('title', 'Title') }}
 				{{ Form::text('title', $post->title, array('class' => 'form-control')) }}
 				<br>
@@ -83,7 +84,7 @@
 	<p>{{ $comment->name }}: </p>
 	<p>{{ $comment->text }} </p>
 </div>
-		{!! Form::open(['route' => ['posts.deleteComment', $comment->id, str_replace(" ", "_", $post->title)], 'method' => 'DELETE']) !!}
+		{!! Form::open(['route' => ['posts.deleteComment', $comment->id, str_replace('#', '%23', $post->title)], 'method' => 'DELETE']) !!}
 		{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
 		{!! Form::close() !!}
 <div class="collapse" id="collapseComment{{$comment->id}}">

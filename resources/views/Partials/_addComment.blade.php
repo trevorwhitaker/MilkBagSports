@@ -9,7 +9,7 @@
 
 			{{ Form::hidden('post_id', $post->id) }}
 
-			{{ Form::hidden('post_title', str_replace(" ", "-", $post->title)) }}
+			{{ Form::hidden('post_title', str_replace('#', '%23', $post->title)) }}
 
 			{{ Form::submit('Submit', array('class' => 'btn btn-primary center-block')) }}
 
