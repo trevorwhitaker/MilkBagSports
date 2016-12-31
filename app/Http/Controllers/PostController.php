@@ -150,7 +150,7 @@ class PostController extends Controller
         }
         $post->save();
 
-        return redirect()->route('posts.show', $id);
+        return redirect()->route('posts.show', $post->title);
 
     }
 
