@@ -29,7 +29,7 @@
             <div class="active item">
 
             <a href="{{ route('posts.show', str_replace(" ", "_", $post->title)) }}">
-                <img src="{{ $post->post_image}}" width="500" height="300" alt="First Slide">
+                <img src="{{ $post->post_image}}" width="100%" height="100%" alt="First Slide">
             </a>
                 <div class="c_caption">
                 	<a href="{{ route('posts.show', str_replace(" ", "_", $post->title)) }}">
