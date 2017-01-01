@@ -18,17 +18,39 @@ What is a milkbag you say? Literally, it’s a bag filled with milk. But for us,
 <div class= "authors">
 	{{ Html::image('images/Gagan8767.jpg', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
-	sup
+	<h4> Gagan - "Scoop"</h4>
+	<p></p>
 	</div>
 </div>
 <div class= "authors">
 	{{ Html::image('images/40_ORR.jpg', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
-	sup
+	<h4> Patrick - "The Vet"</h4>
+	<p>Now a general sports enthusiast, he played multiple sports growing up, but settled into hockey and baseball as time went on. An author of several bestselling books (which can be found at www.fakebooks.com), he’s nicknamed The Vet for his veteran analysis of all sports ranging from college football to lawn bowling. </p>
 	</div>
 </div>
 <div class= "authors">
 	{{ Html::image('images/trev.JPG', 'logo', array('class' => 'author_pic')) }}
+	<div class="auth_desc">
+	<h4> Trevor - "   "</h4>
+	<p></p>
+	</div>
+</div>
+<div class= "authors">
+	{{ Html::image('images/colin.png', 'logo', array('class' => 'author_pic')) }}
+	<div class="auth_desc">
+	<h4> Colin - "   "</h4>
+	<p>He enjoys watching full rounds of golf and eating excessive amounts of popcorn. In his spare time he stocks milk at the grocery store. </p>
+	</div>
+</div>
+<div class= "authors">
+	{{ Html::image('images/colin.png', 'logo', array('class' => 'author_pic')) }}
+	<div class="auth_desc">
+	sup
+	</div>
+</div>
+<div class= "authors">
+	{{ Html::image('images/colin.png', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
 	sup
 	</div>

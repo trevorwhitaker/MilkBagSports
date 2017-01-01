@@ -7,15 +7,19 @@
 	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 
 	<script>
-		tinymce.init({
+	tinymce.init({
 
 		selector: "textarea",      
-		plugins: "link code, media",
+		plugins: "link code, media, paste, image",
 		valid_elements: "*[*]",
 		extended_valid_elements: "embed[width|height|name|flashvars|src|bgcolor|align|play|loop|quality|allowscriptaccess|type|pluginspage],object[id|style|width|height|classid|codebase|*],param[name|value],embed[id|style|width|height|type|src|*]",
-		menubar: true
+		menubar: true,
+		images_upload_url: 'postAcceptor.php',
+  automatic_uploads: false,
+		paste_data_images: true,
+		paste_enable_default_filters: false
 	});
-	</script>
+</script>
 
 @endsection
 

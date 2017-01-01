@@ -10,11 +10,14 @@
 	tinymce.init({
 
 		selector: "textarea",      
-		plugins: "link code, media, paste",
+		plugins: "link code, media, paste, image",
 		valid_elements: "*[*]",
 		extended_valid_elements: "embed[width|height|name|flashvars|src|bgcolor|align|play|loop|quality|allowscriptaccess|type|pluginspage],object[id|style|width|height|classid|codebase|*],param[name|value],embed[id|style|width|height|type|src|*]",
 		menubar: true,
-		paste_data_images: true
+		images_upload_url: 'postAcceptor.php',
+  automatic_uploads: false,
+		paste_data_images: true,
+		paste_enable_default_filters: false
 	});
 </script>
 
@@ -27,7 +30,6 @@
 		<h2> New Blog: </h2>
 		<hr>
 		{!! Form::open(array('route' => 'posts.store', 'files' => true)) !!}
-		<p style="color: red; font-size: 45"> DO NOT USE " / " IN THE TITLE </p>
 		{{ Form::label('title', 'Title') }}
 		{{ Form::text('title', null, array('class' => 'form-control')) }}
 		<br>
