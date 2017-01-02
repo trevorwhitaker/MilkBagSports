@@ -30,6 +30,7 @@
 	<div class="col-md-12">
 		<h2> New Blog: </h2>
 		<hr>
+		<div style="color: red">Please don't have the character "/" in the Title!</div>
 		{!! Form::open(array('route' => 'posts.store', 'files' => true)) !!}
 		{{ Form::label('title', 'Title') }}
 		{{ Form::text('title', null, array('class' => 'form-control')) }}
