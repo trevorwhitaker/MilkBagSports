@@ -18,8 +18,8 @@ What is a milkbag you say? Literally, it’s a bag filled with milk. But for us,
 <div class= "authors">
 	{{ Html::image('images/Gagan8767.jpg', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
-	<h4> Gagan - "Scoop"</h4>
-	<p></p>
+	<h4> Gagan - <a href="/posts/author/Scoop"> "Scoop"</a></h4>
+	<p>He loves watching Toronto Sports more than anything else. Along with baseball analytics, he is a fan of satirical sports takes. Ironically, he doesn't have many inside scoops.</p>
 	</div>
 </div>
 <div class= "authors">
@@ -44,9 +44,17 @@ What is a milkbag you say? Literally, it’s a bag filled with milk. But for us,
 	</div>
 </div>
 <div class= "authors">
+	{{ Html::image('images/dyl.PNG', 'logo', array('class' => 'author_pic')) }}
+	<div class="auth_desc">
+	<h4>Dylan</h4>
+	Hello I'm Dylan, I enjoy sports and leisure. I look forward to taking readers on a literary journey. Thank you for your time.
+	</div>
+</div>
+<div class= "authors">
 	{{ Html::image('images/colin.png', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
-	sup
+	<h4>Chris</h4>
+	Played a bunch of sports cause he couldn't concentrate on one. Now decides to watch a bunch on the couch with snacks.
 	</div>
 </div>
 <div class= "authors">
@@ -56,12 +64,12 @@ What is a milkbag you say? Literally, it’s a bag filled with milk. But for us,
 	</div>
 </div>
 <div class= "authors">
-	{{ Html::image('images/colin.png', 'logo', array('class' => 'author_pic')) }}
+	{{ Html::image('images/unknown.jpg', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
-	sup
+	<h4>You!</h4>
+	Email us at milkbagsport@hotmail.com if you're interested in joining the milkbag team!
 	</div>
 </div>
-
 
 
 @endsection

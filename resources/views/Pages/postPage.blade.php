@@ -4,8 +4,6 @@
 
 @section('title', ' | Post')
 
-
-
 		<h2 class="thosm_no_align">{{ $post->title }}</h2>
 
 		<p class="thosm_no_align"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>

@@ -4,9 +4,8 @@
 
 @section('title', ' | Milk Page Sports')
 
-<h1> {{ $tag or 'All' }} Articles </h1>
-
-<h2 class="thosm_no_align" style="margin-left:20px;"> All Articles </h2>
+<h1 class="thosm_no_align" style="margin-left:20px;"> {{ $tag or 'All' }} Articles </h1>
+<hr>
 
 	@foreach($posts as $post)
 

@@ -71,10 +71,17 @@
 </div>
 
 
-<h2 class="thosm_no_align" style="margin-left:20px;"> Most Recent Posts </h2>
+<h2 class="thosm_no_align" style="margin-left:20px;"> Posts from the Past Week</h2>
 <hr>
 
-<div class="main-posts">
+<!--
+
+<a href="/<?php echo $week - 1 ?>" class="btn btn-primary">Previous Week</a>
+<a href="/<?php echo $week + 1 ?>" class="btn btn-primary">Next Week</a>
+
+-->
+
+<div class="scroll main-posts">
 @foreach($posts as $post)
 
 

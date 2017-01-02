@@ -35,4 +35,6 @@ Route::put('posts/{posts}', ['as' => 'posts.update', 'uses' => 'PostController@u
 
 Route::get('/', 'PageController@getIndex');
 
+Route::get('/week/{week}', ['as' => 'week', 'uses' => 'PageController@find_week_index']);
+
 Route::get('/AboutUs', 'PageController@getAboutUs');

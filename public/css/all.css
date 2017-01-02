@@ -103,7 +103,9 @@
 	border-radius: 50%;
 	float: left;
 	margin-top: 30px;
-	width: 27%;
+	margin-left: 2%;
+	width: 25%;
+	height: 80%;
 }
 .footer-text-main {
 	text-align: center;
@@ -152,11 +154,12 @@
 	width: 68%;
 	height: 200px;
 	margin-right: 20px;
-	margin-top: 40px;
+	margin-top: 45px;
 	padding-top: 20px;
 	padding-left: 20px;
 	padding-right: 20px;
 	background-color: #B0C4DE;
+	border-radius: 20px;
 }
 
 @media only screen and (max-device-width: 640px) {
