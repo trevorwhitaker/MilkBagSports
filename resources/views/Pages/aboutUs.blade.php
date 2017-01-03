@@ -40,7 +40,7 @@ What is a milkbag you say? Literally, it’s a bag filled with milk. But for us,
 	{{ Html::image('images/colin.png', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
 	<h4> Colin - "   "</h4>
-	<p>He enjoys watching full rounds of golf and eating excessive amounts of popcorn. In his spare time he stocks milk at the grocery store. </p>
+	<p>If he’s not yelling “oooooone hundred and eightyyyy” as he watches darts, he enjoys to relax and watch full rounds of golf. Colin loves popcorn almost as much as he loves sports. Milkbag hired him based solely on the fact that he stocks milk bags at the local grocery store. </p>
 	</div>
 </div>
 <div class= "authors">
@@ -58,9 +58,10 @@ What is a milkbag you say? Literally, it’s a bag filled with milk. But for us,
 	</div>
 </div>
 <div class= "authors">
-	{{ Html::image('images/colin.png', 'logo', array('class' => 'author_pic')) }}
+	{{ Html::image('images/sam.jpg', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
-	sup
+	<h4>Sam - "Big Brown"</h4>
+	Fan of all things deep fried, fan of nothing Maple Leafs.
 	</div>
 </div>
 <div class= "authors">
