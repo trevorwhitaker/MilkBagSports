@@ -81,24 +81,6 @@
 			{!! Form::close() !!}
 	</div>
 </div>
-<br>
-<hr>
-@foreach($comments as $comment)
-
-<div>
-	<p>{{ $comment->name }}: </p>
-	<p>{{ $comment->text }} </p>
-</div>
-		{!! Form::open(['route' => ['posts.deleteComment', $comment->id, str_replace('#', '%23', $post->title)], 'method' => 'DELETE']) !!}
-		{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-		{!! Form::close() !!}
-<div class="collapse" id="collapseComment{{$comment->id}}">
-	<div class="card card-block">
-		@include('Partials._replyComment')
-	</div>
-</div>
-<hr>
-@endforeach
 
 @endsection
 

@@ -115,9 +115,7 @@ class PostController extends Controller
             $request->session()->push('viewed', $post->id);
         }
 
-        $comments = Comment::where('post_id', $post->id)->get();
-
-        return view('Pages.postPage')->withPost($post)->withComments($comments);
+        return view('Pages.postPage')->withPost($post);
     }
 
     /**
@@ -137,9 +135,7 @@ class PostController extends Controller
         $post = $posts[0];
         $post->tags = explode(",", $post->categories);
 
-        $comments = Comment::where('post_id', $post->id)->get();
-
-        return view('Posts.editPostPage')->withPost($post)->withComments($comments);
+        return view('Posts.editPostPage')->withPost($post);
     }
 
     /**
@@ -181,36 +177,6 @@ class PostController extends Controller
         Post::destroy($id);
 
         return redirect('/'); 
-    }
-
-    public function saveComment(Request $request)
-    {
-        $this->validate($request, array(
-           'name' => 'required|max:250',
-           'text' => 'required',
-        ));
-
-        $comment = new Comment;
-        $comment->name = $request->name;
-        $comment->text = $request->text;
-        $comment->post_id = $request->post_id;
-        $comment->reply_id = $request->reply_id;
-
-        $comment->save();
-
-        return redirect()->route('posts.show', $this->escapePostTitle($request->post_title));
-    }
-
-    public function deleteComment($id, $title)
-    {
-        $comment = Comment::find($id);
-        if ($comment == null)
-        {
-            Session::flash('error', 'Comment not found.');
-            return redirect('/');
-        }
-        $comment->delete();
-        return redirect()->route('posts.edit', $this->escapePostTitle($title));
     }
 
     public function getPostByTag($tag)
