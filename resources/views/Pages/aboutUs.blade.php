@@ -32,8 +32,10 @@ What is a milkbag you say? Literally, it’s a bag filled with milk. But for us,
 <div class= "authors">
 	{{ Html::image('images/trev.JPG', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
-	<h4> Trevor - "   "</h4>
-	<p></p>
+	<h4> Trevor - "Biggie Bigs"</h4>
+	<p>
+		He was on the fast track to the show but when good ol' Tommy John came to visit, that spelt an end for his career. Instead he fully embraced the lifestyle of a milkbag and took an interest in smoked meats and gambling. He is now the technical lead at MilkBagSports.
+	</p>
 	</div>
 </div>
 <div class= "authors">
