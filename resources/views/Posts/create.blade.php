@@ -37,7 +37,7 @@
 		<br>
 
 		{{ Form::label('author', 'Author') }}
-		{{ Form::select('author', ['Scoop' => 'Scoop', 'The Vet' => 'The Vet', 'C-eds' => 'C-eds']) }}
+		{{ Form::select('author', ['Scoop' => 'Scoop', 'The Vet' => 'The Vet', 'C-eds' => 'C-eds', 'Biggie Bigs' => 'Biggie Bigs', 'Dylan' => 'Dylan', 'Snax' => 'Snax', 'Big Brown' => 'Big Brown', 'Big Brown' => 'Big Brown']) }}
 		<br>
 
 

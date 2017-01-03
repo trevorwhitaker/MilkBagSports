@@ -34,10 +34,6 @@
             <li><a href="/posts/tags/Football">Football</a></li>
             <li><a href="/posts/tags/Viral">Viral</a></li>
             <li><a href="/posts/tags/Other">Other</a></li>
-            <li role="separator" class="divider"></li>
-            <li class="dropdown-header">Authors</li>
-            <li><a href="/posts/author/Scoop">Scoop</a></li>
-            <li><a href="/posts/author/The_Vet">The Vet</a></li>
           </ul>
         </li>
         <li class="{{ Request::is('AboutUs') ? "active" : "" }}"><a href="/AboutUs">About Us</a></li>

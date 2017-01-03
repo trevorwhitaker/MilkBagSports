@@ -5,7 +5,7 @@
 @section('title', ' | Home')
 
 
-{{ Html::image('images/main_logo.png', 'logo', array('class' => 'logo')) }}
+{{ Html::image('images/MilkBag2.jpg', 'logo', array('class' => 'logo')) }}
 
 <div class="bs-example">
     <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
