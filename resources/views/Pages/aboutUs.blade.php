@@ -16,7 +16,7 @@ What is a milkbag you say? Literally, it’s a bag filled with milk. But for us,
 
 
 <div class= "authors">
-	{{ Html::image('images/Gagan8767.jpg', 'logo', array('class' => 'author_pic')) }}
+	{{ Html::image('images/scoop.PNG', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
 	<h4> Gagan - <a href="/posts/author/Scoop"> "Scoop"</a></h4>
 	<p>He loves watching Toronto Sports more than anything else. Along with baseball analytics, he is a fan of satirical sports takes. Ironically, he doesn't have many inside scoops.</p>
@@ -51,7 +51,7 @@ What is a milkbag you say? Literally, it’s a bag filled with milk. But for us,
 	</div>
 </div>
 <div class= "authors">
-	{{ Html::image('images/colin.png', 'logo', array('class' => 'author_pic')) }}
+	{{ Html::image('images/chris.jpg', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
 	<h4>Chris</h4>
 	Played a bunch of sports cause he couldn't concentrate on one. Now decides to watch a bunch on the couch with snacks.
@@ -67,7 +67,7 @@ What is a milkbag you say? Literally, it’s a bag filled with milk. But for us,
 	{{ Html::image('images/unknown.jpg', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
 	<h4>You!</h4>
-	Email us at milkbagsport@hotmail.com if you're interested in joining the milkbag team!
+	Email us at milkbagsports@hotmail.com if you're interested in joining the milkbag team!
 	</div>
 </div>
 
