@@ -8,6 +8,17 @@
 
 		<p class="thosm_no_align"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>
 
+		<?php
+		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" 
+		?>
+
+	<div class="ssk-group">
+	    <a href="http://www.facebook.com/sharer.php?s=100&p[title]={{$post->title}}&p[url]={{$actual_link}}&p[summary]=Check out this post from Milkbag Sports!" class="ssk ssk-facebook"></a>
+	    <a href="https://twitter.com/intent/tweet?text=Check Out this post from Milkbag Sports! {{$actual_link}}" class="ssk ssk-twitter"></a>
+	    <a href="mailto:?subject=Check out this post by Milkbag Sports!&amp;body=Check it out here: {{$actual_link}}" title="Share by Email" class="ssk ssk-email"></a>
+	</div>
+
+
 		<hr>
 
 		{!! $post->body !!}

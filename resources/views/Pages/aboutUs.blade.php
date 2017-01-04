@@ -71,7 +71,7 @@
 	{{ Html::image('images/unknown.jpg', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
 	<h4>You!</h4>
-	Email us at milkbagsports@hotmail.com if you're interested in joining the milkbag team!
+	Email us at milkbagsports@gmail.com if you're interested in joining the Milkbag team!
 	</div>
 </div>
 
