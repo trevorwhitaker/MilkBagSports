@@ -24,7 +24,7 @@
 	</div>
 </div>
 <div class= "authors">
-	{{ Html::image('images/40_ORR.jpg', 'logo', array('class' => 'author_pic')) }}
+	{{ Html::image('images/pat.jpg', 'logo', array('class' => 'author_pic')) }}
 	<div class="auth_desc">
 	<h4> Patrick - <a href="/posts/author/The_Vet"> "The Vet"</a></h4>
 	<p>Now a general sports enthusiast, he played multiple sports growing up, but settled into hockey and baseball as time went on. An author of several bestselling books (which can be found at www.fakebooks.com), he’s nicknamed The Vet for his veteran analysis of all sports ranging from college football to lawn bowling. </p>
