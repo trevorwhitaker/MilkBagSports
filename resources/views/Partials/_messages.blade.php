@@ -12,8 +12,6 @@
 	<strong>Error:</strong> {{ Session::get('error') }}
 </div>
 
-@endif
-
 @if (count($errors) > 0)
 
 <div class="alert alert-danger" role="alert" style="text-align:  center">
@@ -25,4 +23,5 @@
 	</ul>
 </div>
 
+@endif
 @endif
