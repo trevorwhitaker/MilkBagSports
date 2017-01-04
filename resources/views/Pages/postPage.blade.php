@@ -10,7 +10,7 @@
 
 		<?php
 		$title = substr(Request::path(), 6);
-		$actual_link = "http://$_SERVER[HTTP_HOST]/posts/" . urlencode($title)
+		$actual_link = "http://$_SERVER[HTTP_HOST]/posts/" . rawurlencode($title)
 		?>
 
 	<div class="ssk-group">
