@@ -36,11 +36,6 @@
 		{{ Form::text('title', null, array('class' => 'form-control')) }}
 		<br>
 
-		{{ Form::label('author', 'Author') }}
-		{{ Form::select('author', ['Scoop' => 'Scoop', 'The Vet' => 'The Vet', 'C-eds' => 'C-eds', 'Biggie Bigs' => 'Biggie Bigs', 'Dylan' => 'Dylan', 'Snax' => 'Snax', 'Big Brown' => 'Big Brown', 'Big Brown' => 'Big Brown']) }}
-		<br>
-
-
 		{{ Form::label('post_image', 'Add Title Image') }}
 		{{ Form::file('post_image') }}
 

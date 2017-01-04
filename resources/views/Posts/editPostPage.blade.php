@@ -41,10 +41,6 @@
 				{{ Form::text('title', $post->title, array('class' => 'form-control')) }}
 				<br>
 
-				{{ Form::label('author', 'Author') }}
-				{{ Form::select('author', ['Scoop' => 'Scoop', 'The Vet' => 'The Vet'], $post->author) }}
-				<br>
-
 				{{ Form::label('body', 'Body') }}
 				{{ Form::textarea('body', $post->body, array('class' => 'form-control')) }}
 				<br>

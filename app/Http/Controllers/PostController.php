@@ -18,6 +18,8 @@ use App\Events\ViewPostEvent;
 
 use Event;
 
+use Auth;
+
 class PostController extends Controller
 {
     /**
@@ -62,7 +64,6 @@ class PostController extends Controller
         //validate the data
         $this->validate($request, array(
            'title' => 'required|unique:posts|max:250',
-           'author' => 'required|max:20',
            'body' => 'required',
            'post_image' => 'required',
            'tags' => 'array'
@@ -78,7 +79,7 @@ class PostController extends Controller
         // create new post object
         $post = new Post;
         $post->title = $request->title;
-        $post->author = $request->author;
+        $post->author = Auth::user()->alias;
         $post->body = $request->body;
         $post->post_image = '/uploads/'. $filename;
         $post->categories = implode(",", array_values($request->tags));
@@ -133,6 +134,13 @@ class PostController extends Controller
             return redirect('/');
         }
         $post = $posts[0];
+
+        if (Auth::user()->alias != $post->author and !Auth::user()->hasRole('Admin'))
+        {
+            Session::flash('error', 'You can only edit your own posts.');
+            return redirect()->back();
+        }
+
         $post->tags = explode(",", $post->categories);
 
         return view('Posts.editPostPage')->withPost($post);
@@ -155,6 +163,12 @@ class PostController extends Controller
         }
         $post = $posts[0];
 
+        if (Auth::user()->alias != $post->author and !Auth::user()->hasRole('Admin'))
+        {
+            Session::flash('error', 'You can only edit your own posts.');
+            return redirect()->back();
+        }
+
         $post->fill($request->all());
         if (isset($request['tags']))
         {
@@ -174,7 +188,18 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        Post::destroy($id);
+        $post = Post::find($id);
+        if ($post == null)
+        {
+            Session::flash('error', 'No such post exists.');
+            return redirect('/');
+        }
+
+        if (Auth::user()->alias != $post->author and !Auth::user()->hasRole('Admin'))
+        {
+            Session::flash('error', 'You can only edit your own posts.');
+            return redirect()->back();
+        }
 
         return redirect('/'); 
     }

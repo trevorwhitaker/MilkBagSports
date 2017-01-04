@@ -11,30 +11,43 @@
 |
 */
 
-Route::post('posts/saveComment', ['as' => 'posts.saveComment', 'uses' => 'PostController@saveComment']);
-
 Route::get('posts', ['as' => 'posts.index', 'uses' => 'PostController@index']);
 
 Route::post('posts', ['as' => 'posts.store', 'uses' => 'PostController@store']);
 
-Route::get('posts/create', ['as' => 'posts.create', 'uses' => 'PostController@create'])->middleware('auth.basic');
+Route::get('posts/create', ['as' => 'posts.create', 'uses' => 'PostController@create', 'roles' => ['Admin', 'Author']])->middleware('roles');
 
 Route::get('posts/{posts}', ['as' => 'posts.show', 'uses' => 'PostController@show']);
 
-Route::get('posts/{posts}/edit', ['as' => 'posts.edit', 'uses' => 'PostController@edit'])->middleware('auth.basic');
+Route::get('posts/{posts}/edit', ['as' => 'posts.edit', 'uses' => 'PostController@edit', 'roles' => ['Admin', 'Author']])->middleware('roles');
 
 Route::get('posts/tags/{tag}', ['as' => 'posts.getPostByTag', 'uses' => 'PostController@getPostByTag']);
 
 Route::get('posts/author/{author}', ['as' => 'posts.getPostByAuthor', 'uses' => 'PostController@getPostByAuthor']);
 
-Route::delete('posts/{posts}', ['as' => 'posts.destroy', 'uses' => 'PostController@destroy'])->middleware('auth.basic');
+Route::delete('posts/{posts}', ['as' => 'posts.destroy', 'uses' => 'PostController@destroy', 'roles' => ['Admin', 'Author']])->middleware('roles');
 
-Route::delete('posts/deleteComment/{posts}/{title}', ['as' => 'posts.deleteComment', 'uses' => 'PostController@deleteComment'])->middleware('auth.basic');
-
-Route::put('posts/{posts}', ['as' => 'posts.update', 'uses' => 'PostController@update'])->middleware('auth.basic');
+Route::put('posts/{posts}', ['as' => 'posts.update', 'uses' => 'PostController@update', 'roles' => ['Admin', 'Author']])->middleware('roles');
 
 Route::get('/', 'PageController@getIndex');
 
 Route::get('/week/{week}', ['as' => 'week', 'uses' => 'PageController@find_week_index']);
 
 Route::get('/AboutUs', 'PageController@getAboutUs');
+
+// Session routes
+
+Route::get('/authorsignin', ['as' => 'auth.index', 'uses' => 'UserController@getIndex']);
+
+Route::get('/authorlogout', ['as' => 'auth.logout', 'uses' => 'UserController@logout', 'roles' => ['Admin', 'Author']])->middleware('roles');
+
+Route::post('/authorsignin', ['as' => 'auth.signin', 'uses' => 'UserController@signin']);
+
+Route::get('/authorchangepassword', ['as' => 'auth.getChangePassword', 'uses' => 'UserController@getChangePassword', 'roles' => ['Admin', 'Author']])->middleware('roles');
+
+Route::post('/authorchangepassword', ['as' => 'auth.changePassword', 'uses' => 'UserController@changePassword', 'roles' => ['Admin', 'Author']])->middleware('roles');
+
+// Admin routes
+
+Route::get('admindashboard', ['as' => 'admin.index', 'uses' => 'AdminController@getIndex', 'roles' => ['Admin']])->middleware('roles');
+
