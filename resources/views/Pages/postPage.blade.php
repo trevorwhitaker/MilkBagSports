@@ -9,7 +9,7 @@
 		<p class="thosm_no_align"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>
 
 		<?php
-		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" 
+		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"
 		?>
 
 	<div class="ssk-group">
