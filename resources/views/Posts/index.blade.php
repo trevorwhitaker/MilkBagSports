@@ -16,7 +16,7 @@
 				<h3 class="thosm_no_align" id="h3">{{ $post->title }}</h3>
 				<p class="thosm_no_align"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->updated_at)) }}</strong></p>
 			</div>
-			<a href="{{ route('posts.show', str_replace('#', '%23', $post->title)) }}" class="btn btn-primary">Read More</a>
+			<a href="{{ route('posts.show', urlencode($post->title)) }}" class="btn btn-primary">Read More</a>
 		</div>
 	</div>
 	@endforeach
