@@ -50,7 +50,7 @@
 		</span>
 		<span class="button-checkbox">
 			<button type="button" class="btn" data-color="primary">Basketball</button>
-			<input type="checkbox" name="tags[]" class="hidden" value="Basktball" />
+			<input type="checkbox" name="tags[]" class="hidden" value="Basketball" />
 		</span>
 		<span class="button-checkbox">
 			<button type="button" class="btn" data-color="primary">Football</button>

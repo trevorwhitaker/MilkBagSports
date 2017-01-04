@@ -50,7 +50,7 @@
 				</span>
 				<span class="button-checkbox">
 					<button type="button" class="btn" data-color="primary">Basketball</button>
-					<input type="checkbox" name="tags[]" class="hidden" value="Basktball" {{ in_array('Basketball', $post->tags)  ? 'checked' : 'unchecked' }}/>
+					<input type="checkbox" name="tags[]" class="hidden" value="Basketball" {{ in_array('Basketball', $post->tags)  ? 'checked' : 'unchecked' }}/>
 				</span>
 				<span class="button-checkbox">
 					<button type="button" class="btn" data-color="primary">Football</button>
