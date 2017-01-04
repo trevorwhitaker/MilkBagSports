@@ -35,7 +35,7 @@ class PostController extends Controller
 
     private function getPostByTitle($title)
     {
-        $title = urldecode($title);
+        $title = rawurldecode($title);
 
         return Post::where('title', '=', $title)->get();
     }
@@ -173,7 +173,7 @@ class PostController extends Controller
         }
         $post->save();
 
-        return redirect()->route('posts.show', urlencode($id));
+        return redirect()->route('posts.show', rawurlencode($id));
 
     }
 
