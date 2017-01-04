@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Post;
+
 class AdminController extends Controller
 {
     public function getIndex()
     {
-    	return view ('Admin.index');
+    	$posts = Post::select('id', 'title', 'author', 'view_count')->get();
+    	return view ('Admin.index')->withPosts($posts);
     }
 }
