@@ -29,14 +29,13 @@
 <div class="row">
 	<div class="col-md-12">
 		<h2> Edit Blog: </h2>
-
 		{!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE']) !!}
 		{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
 		{!! Form::close() !!}
 
 		<hr>
 			{!! Form::open(array('method' => 'PUT', 'route' => ['posts.update', urlencode($post->title)])) !!}
-			<p style="color: red; font-size: 45"> DO NOT USE " / " IN THE TITLE </p>
+			<p style="color: red; font-size: 45"> DO NOT USE " / " or " + " IN THE TITLE </p>
 				{{ Form::label('title', 'Title') }}
 				{{ Form::text('title', $post->title, array('class' => 'form-control')) }}
 				<br>
