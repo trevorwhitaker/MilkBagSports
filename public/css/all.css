@@ -111,8 +111,15 @@
 .footer-text-main {
 	text-align: center;
 	padding-top: 30px;
-	color: white
+	color: white;
 }
+
+.footer-text-side {
+	text-align: right;
+	padding-top: 30px;
+	float:right;
+}
+
 
 .post_description {
 	padding-right: 0px;

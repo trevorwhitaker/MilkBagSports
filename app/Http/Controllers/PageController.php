@@ -47,4 +47,9 @@ class PageController extends Controller
 	{	//need to change this to a maybe weekly limit instead
 		return view('Pages.aboutUs');
 	}
+
+	public function getlegal() 
+  	{	
+   		return view('Pages.legal');
+   	}
 }

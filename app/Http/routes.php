@@ -51,3 +51,5 @@ Route::post('/authorchangepassword', ['as' => 'auth.changePassword', 'uses' => '
 
 Route::get('admindashboard', ['as' => 'admin.index', 'uses' => 'AdminController@getIndex', 'roles' => ['Admin']])->middleware('roles');
 
+Route::get('/legal', 'PageController@getlegal');
+
