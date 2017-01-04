@@ -35,7 +35,7 @@
 		{!! Form::close() !!}
 
 		<hr>
-			{!! Form::open(array('method' => 'PUT', 'route' => ['posts.update', str_replace('#', '%23', $post->title)])) !!}
+			{!! Form::open(array('method' => 'PUT', 'route' => ['posts.update', urlencode($post->title)])) !!}
 			<p style="color: red; font-size: 45"> DO NOT USE " / " IN THE TITLE </p>
 				{{ Form::label('title', 'Title') }}
 				{{ Form::text('title', $post->title, array('class' => 'form-control')) }}

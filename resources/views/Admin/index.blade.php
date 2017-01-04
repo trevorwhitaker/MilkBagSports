@@ -15,7 +15,7 @@
   <tbody>
   @foreach ($posts as $post)
     <tr>
-      <td><a href="/posts/{{ $post->title }}">{{ $post->title }}</a></td>
+      <td><a href="/posts/{{ urlencode($post->title) }}">{{ $post->title }}</a></td>
       <td>{{ $post->author}}</td>
       <td>{{ $post->view_count}}</td>
     </tr>

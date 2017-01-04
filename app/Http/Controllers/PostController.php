@@ -35,12 +35,9 @@ class PostController extends Controller
 
     private function getPostByTitle($title)
     {
-        return Post::where('title', '=', $title)->get();
-    }
+        $title = urldecode($title);
 
-    private function escapePostTitle($title)
-    {
-        return str_replace('#', '%23', $title);
+        return Post::where('title', '=', $title)->get();
     }
 
     /**
@@ -176,7 +173,7 @@ class PostController extends Controller
         }
         $post->save();
 
-        return redirect()->route('posts.show', $this->escapePostTitle($id));
+        return redirect()->route('posts.show', urlencode($id));
 
     }
 
