@@ -198,6 +198,7 @@ class PostController extends Controller
             return redirect()->back();
         }
 
+        $post->delete();
         return redirect('/'); 
     }
 
