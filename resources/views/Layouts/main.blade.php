@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
+	<link rel="icon" href="www.milkbagsports.ca/favicon.ico"/>
 	<head>
 		@include('Partials._head')
 	</head>
-
 	<body class="body-class">
 	@include('Partials._nav')
 
