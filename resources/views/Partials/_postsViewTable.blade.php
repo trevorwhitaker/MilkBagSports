@@ -1,11 +1,3 @@
-@extends('Layouts.main')
-
-@section('content')
-
-@section('title', ' | Post')
-
-<a href="{{ route('admin.getAuthors') }}" class="btn btn-info" style="margin-top: 15px;">Manage Authors</a>
-
 <table class="table table-hover" style="margin-top: 2%">
   <thead>
     <tr>
@@ -24,5 +16,3 @@
    @endforeach
   </tbody>
 </table>
-
-@endsection

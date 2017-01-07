@@ -35,6 +35,8 @@ Route::get('/week/{week}', ['as' => 'week', 'uses' => 'PageController@find_week_
 
 Route::get('/AboutUs', 'PageController@getAboutUs');
 
+Route::get('/legal', 'PageController@getlegal');
+
 // Session routes
 
 Route::get('/authorsignin', ['as' => 'auth.index', 'uses' => 'UserController@getIndex']);
@@ -51,5 +53,17 @@ Route::post('/authorchangepassword', ['as' => 'auth.changePassword', 'uses' => '
 
 Route::get('admindashboard', ['as' => 'admin.index', 'uses' => 'AdminController@getIndex', 'roles' => ['Admin']])->middleware('roles');
 
-Route::get('/legal', 'PageController@getlegal');
+Route::get('admindashboard/authors', ['as' => 'admin.getAuthors', 'uses' => 'AdminController@getAuthors', 'roles' => ['Admin']])->middleware('roles');
 
+Route::get('admindashboard/authors/edit/{id}', ['as' => 'admin.editAuthor', 'uses' => 'AdminController@editAuthor', 'roles' => ['Admin']])->middleware('roles');
+
+Route::get('admindashboard/authors/create', ['as' => 'admin.addAuthor', 'uses' => 'AdminController@addAuthor', 'roles' => ['Admin']])->middleware('roles');
+
+Route::post('admindashboard/authors/create', ['as' => 'admin.createAuthor', 'uses' => 'AdminController@createAuthor', 'roles' => ['Admin']])->middleware('roles');
+
+Route::post('admindashboard/authors/{id}/edit', ['as' => 'admin.updateAuthor', 'uses' => 'AdminController@updateAuthor', 'roles' => ['Admin']])->middleware('roles');
+
+Route::delete('admindashboard/authors/{id}', ['as' => 'admin.deleteAuthor', 'uses' => 'AdminController@deleteAuthor', 'roles' => ['Admin']])->middleware('roles');
+
+// Author routes
+Route::get('/authordashboard', ['as' => 'author.index', 'uses' => 'AdminController@getAuthorDashboard', 'roles' => ['Admin', 'Author']])->middleware('roles');
