@@ -63,8 +63,12 @@
         <li class="dropdown">
           <a role="button" aria-haspopup="true" aria-expanded="false">Author<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/authorlogout">Log out</a></li>
+            <li><a href="/authordashboard">Dashboard</a></li>
+            @if (Auth::User()->hasRole('Admin'))
+                <li><a href="/admindashboard">Admin Dashboard</a></li>
+            @endif
             <li><a href='/authorchangepassword'>Change Password</a>
+            <li><a href="/authorlogout">Log out</a></li>
             </ul>
           </li>
 
