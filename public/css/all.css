@@ -83,6 +83,22 @@
 	float: right;
 }
 
+.nextpage_button {
+	float: right;
+	padding-right: 2%;
+}
+
+.previouspage_button {
+	float: left;
+	padding-left: 2%;
+}
+.error-image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 67%;
+}
+
 .logo {
 	float: left;
 	margin-left: 40px;
@@ -243,20 +259,4 @@
 		background-color: white;
 	}
 	
-}
-
-.nextpage_button {
-	float: right;
-	padding-right: 2%;
-}
-
-.previouspage_button {
-	float: left;
-	padding-left: 2%;
-}
-.error-image {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 67%;
 }
