@@ -31,11 +31,15 @@ class PageController extends Controller
 
 		$required_week_start = date('Y-m-d', mktime(0, 0, 0, date("m") , date("d") - ($week)*7, date("Y")));
 
+		$show_next_date = date('Y-m-d', mktime(0, 0, 0, date("m") , date("d") - ($week + 1)*7, date("Y")));
+
 		$posts = Post::orderBy('id', 'desc')->whereBetween('created_at', array($required_week_start, $required_week_end))->get();
+
+		$flag = Post::where('created_at', '<', $required_week_start)->first() != null;
 
 		$top_posts = Post::orderBy('view_count', 'desc')->whereBetween('created_at', array($last_week, $tomorrow))->limit(3)->get();
 		
-		return view('Pages.index')->withPosts($posts)->withTop_posts($top_posts)->withWeek($week);
+		return view('Pages.index')->withPosts($posts)->withTop_posts($top_posts)->withWeek($week)->withFlag($flag);
 
 	}
 
@@ -48,7 +52,7 @@ class PageController extends Controller
 
 		$top_posts = Post::orderBy('view_count', 'desc')->whereBetween('created_at', array($last_week, $tomorrow))->limit(3)->get();
 		
-		return view('Pages.index')->withPosts($posts)->withTop_posts($top_posts)->withWeek(1);
+		return view('Pages.index')->withPosts($posts)->withTop_posts($top_posts)->withWeek(1)->withFlag(true);
 	}
 
 
