@@ -78,13 +78,13 @@
 
 
 <div class="scroll main-posts">
-<!--
+
 <?php 
 if ($week != 1){
     ?> <div class="previouspage_button"><a href="/week/<?php echo $week - 1 ?>" class="btn btn-primary">Previous Week</a></div>
 <?php } ?> 
 <div class="nextpage_button"><a href="/week/<?php echo $week + 1 ?>" class="btn btn-primary">Next Week</a></div>
--->
+
 @foreach($posts as $post)
 
 
