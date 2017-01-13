@@ -19,12 +19,21 @@ class PageController extends Controller
 
 	{
 		$curr = date('Y-m-d', time());
-		$required_week_end= date('Y-m-d', mktime(0, 0, 0, date("m") , date("d") - ($week-1)*7, date("Y")));
+		$tomorrow = date('Y-m-d', mktime(0, 0, 0, date("m") , date("d") +1, date("Y")));
+		$last_week = date('Y-m-d', mktime(0, 0, 0, date("m") , date("d") - 7, date("Y")));
+
+		if ($week == 1){
+			$required_week_end = date('Y-m-d', mktime(0, 0, 0, date("m") , date("d") +1, date("Y")));
+		}
+		else{
+			$required_week_end= date('Y-m-d', mktime(0, 0, 0, date("m") , date("d") - ($week-1)*7, date("Y")));
+		}
+
 		$required_week_start = date('Y-m-d', mktime(0, 0, 0, date("m") , date("d") - ($week)*7, date("Y")));
 
 		$posts = Post::orderBy('id', 'desc')->whereBetween('created_at', array($required_week_start, $required_week_end))->get();
 
-		$top_posts = Post::orderBy('view_count', 'desc')->limit(3)->get();
+		$top_posts = Post::orderBy('view_count', 'desc')->whereBetween('created_at', array($last_week, $tomorrow))->limit(3)->get();
 		
 		return view('Pages.index')->withPosts($posts)->withTop_posts($top_posts)->withWeek($week);
 

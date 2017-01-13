@@ -74,14 +74,17 @@
 <h2 class="thosm_no_align" style="margin-left:20px;"> Posts from the Past Week</h2>
 <hr>
 
-<!--
 
-<a href="/<?php echo $week - 1 ?>" class="btn btn-primary">Previous Week</a>
-<a href="/<?php echo $week + 1 ?>" class="btn btn-primary">Next Week</a>
 
--->
 
 <div class="scroll main-posts">
+
+<?php 
+if ($week != 1){
+    ?> <div class="previouspage_button"><a href="/week/<?php echo $week - 1 ?>" class="btn btn-primary">Previous Week</a></div>
+<?php } ?> 
+<div class="nextpage_button"><a href="/week/<?php echo $week + 1 ?>" class="btn btn-primary">Next Week</a></div>
+
 @foreach($posts as $post)
 
 
@@ -93,9 +96,8 @@
 				<h3 class="thosm_no_align" id="h3">{{ $post->title }}</h3>
 				<p class="thosm_no_align"> <strong>{{ $post->author }} | {{ date('M j, Y g:i A', strtotime($post->created_at)) }}</strong></p>
 			</div>
-			<a href="{{ route('posts.show', rawurlencode($post->title)) }}" class="btn btn-outline-primary">Read More</a>
+			<a href="{{ route('posts.show', rawurlencode($post->title)) }}" class="btn btn-primary">Read More</a>
 		</div>
-		<hr>
 @endforeach
 </div>
 <div class="twitter_feed">

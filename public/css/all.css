@@ -245,6 +245,15 @@
 	
 }
 
+.nextpage_button {
+	float: right;
+	padding-right: 2%;
+}
+
+.previouspage_button {
+	float: left;
+	padding-left: 2%;
+}
 .error-image {
 	display: block;
 	margin-left: auto;
