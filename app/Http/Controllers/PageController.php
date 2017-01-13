@@ -37,7 +37,7 @@ class PageController extends Controller
 		$last_week = date('Y-m-d', mktime(0, 0, 0, date("m") , date("d") - 7, date("Y")));
 		$posts = Post::orderBy('id', 'desc')->whereBetween('created_at', array($last_week, $tomorrow))->get();
 
-		$top_posts = Post::orderBy('view_count', 'desc')->limit(3)->get();
+		$top_posts = Post::orderBy('view_count', 'desc')->whereBetween('created_at', array($last_week, $tomorrow))->limit(3)->get();
 		
 		return view('Pages.index')->withPosts($posts)->withTop_posts($top_posts)->withWeek(1);
 	}
