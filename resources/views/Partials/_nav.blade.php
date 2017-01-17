@@ -40,14 +40,11 @@
 
           </ul>
 
-      <!--
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+
+      <form id="searchbar" class="navbar-form navbar-left">
+        <search></search>
       </form>
-    -->
+
     <ul class="nav navbar-nav navbar-right">
       <nav class="social__nav">
       	<ul>
@@ -74,8 +71,11 @@
 
         </ul>
       @endif
-      
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 </div>
+<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+<script src="/js/app.js"></script>

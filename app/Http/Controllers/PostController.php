@@ -214,4 +214,16 @@ class PostController extends Controller
         $posts = Post::where('author', '=', $author)->orderBy('created_at', 'DESC')->get();
         return view('Posts.index')->withPosts($posts)->withAuthor(' written by '. $author);
     }
+
+    public function search($query)
+    {
+        $posts = Post::select('title', 'author', 'post_image', 'created_at')->where('title', 'like', '%' . $query . '%')->take(3)->get();
+
+        foreach ($posts as $post)
+        {
+            $post->url = '/posts/' . $post->title;
+            $post->author = $post->author . ' | ' . date('M j, Y g:i A', strtotime($post->created_at));
+        }
+        return $posts;
+    }
 }
