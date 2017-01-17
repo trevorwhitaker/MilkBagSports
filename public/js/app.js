@@ -142,7 +142,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		searchPosts: _.debounce(function () {
 			var search = this;
 			search.posts = [];
-			axios.get('http://localhost:8000/api/search/' + search.query).then(function (response) {
+			axios.get('http://trevorrobertwhitaker.com/api/search/' + search.query).then(function (response) {
 				search.posts = response.data;
 			});
 		}, 500)

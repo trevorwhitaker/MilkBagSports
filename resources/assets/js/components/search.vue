@@ -47,7 +47,7 @@ export default {
 	searchPosts: _.debounce(function() {
 	        var search = this;
 	        search.posts = [];
-	        axios.get('http://localhost:8000/api/search/' + search.query)
+	        axios.get('http://trevorrobertwhitaker.com/api/search/' + search.query)
 	          .then(function(response) {
 	          	search.posts = response.data
 	          })
