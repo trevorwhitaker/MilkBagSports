@@ -40,10 +40,11 @@
 
           </ul>
 
-
+          <!--
       <form id="searchbar" class="navbar-form navbar-left">
         <search></search>
       </form>
+      -->
 
     <ul class="nav navbar-nav navbar-right">
       <nav class="social__nav">
