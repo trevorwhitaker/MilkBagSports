@@ -32,7 +32,7 @@ export default {
   watch: {
   	
 	query: function() {
-		if (this.query.length >= 5)
+		if (this.query.length >= 4)
 		{
 			this.searchPosts();
 		}

@@ -131,7 +131,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	watch: {
 
 		query: function query() {
-			if (this.query.length >= 5) {
+			if (this.query.length >= 4) {
 				this.searchPosts();
 			} else {
 				this.posts = [];
@@ -142,7 +142,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		searchPosts: _.debounce(function () {
 			var search = this;
 			search.posts = [];
-			axios.get('http://trevorrobertwhitaker.com/api/search/' + search.query).then(function (response) {
+			axios.get('http://milkbagsports.ca/api/search/' + search.query).then(function (response) {
 				search.posts = response.data;
 			});
 		}, 500)
